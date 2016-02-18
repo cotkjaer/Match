@@ -30,6 +30,18 @@ infix operator !~ { associativity left precedence 160 }
 //    return !(lhs ~~ rhs)
 //}
 
+/// Default matches to equals
+public func ~~ <E:Equatable> (lhs: E, rhs: E) -> Bool
+{
+    return lhs == rhs
+}
+
+public func !~ <E:Equatable> (lhs: E, rhs: E) -> Bool
+{
+    return lhs != rhs
+}
+
+
 /// Example matching functions
 
 public func ~~ (string: String, any: Any) -> Bool
@@ -53,7 +65,3 @@ public func ~~ <CSC: CustomStringConvertible>(string: String, convertible: CSC) 
 }
 
 
-public func ~~ <E:Equatable> (lhs: E, rhs: E) -> Bool
-{
-    return lhs == rhs
-}

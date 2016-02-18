@@ -40,5 +40,7 @@ class MatchTests: XCTestCase
         XCTAssertFalse(-1 ~~ -2)
         
         XCTAssert("true" ~~ "true")
+        XCTAssert(true !~ false)
+        XCTAssert(3.45 ~~ 3.45)
     }
 }
