@@ -9,28 +9,36 @@
 import XCTest
 @testable import Match
 
-class MatchTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+class MatchTests: XCTestCase
+{
+    func test_default_String_Int()
+    {
+        let string = "123"
+        
+        let negative = -123
+        let positive = 123
+        
+        XCTAssert(string ~~ positive)
+        
+        XCTAssertFalse(string !~ positive)
+        
+        XCTAssertFalse(string ~~ negative)
+        XCTAssertFalse(string ~~ 0)
+        
+        XCTAssertFalse("" ~~ negative)
+        
+        XCTAssertFalse(string ~~ negative)
+        XCTAssertFalse(string ~~ 0)
+        
+        XCTAssertFalse("" ~~ negative)
     }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+
+    func test_default_equatable()
+    {
+        XCTAssert(3 ~~ 3)
+        XCTAssertFalse(0 ~~ 23)
+        XCTAssertFalse(-1 ~~ -2)
+        
+        XCTAssert("true" ~~ "true")
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }

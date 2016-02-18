@@ -10,6 +10,7 @@
 		8FD874E91C76206500181FA6 /* Match.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FD874E81C76206500181FA6 /* Match.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8FD874F01C76206500181FA6 /* Match.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FD874E51C76206500181FA6 /* Match.framework */; };
 		8FD874F51C76206600181FA6 /* MatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD874F41C76206600181FA6 /* MatchTests.swift */; };
+		8FD875001C76207400181FA6 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD874FF1C76207400181FA6 /* Match.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		8FD874EF1C76206500181FA6 /* MatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD874F41C76206600181FA6 /* MatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTests.swift; sourceTree = "<group>"; };
 		8FD874F61C76206600181FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FD874FF1C76207400181FA6 /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		8FD874E71C76206500181FA6 /* Match */ = {
 			isa = PBXGroup;
 			children = (
+				8FD874FF1C76207400181FA6 /* Match.swift */,
 				8FD874E81C76206500181FA6 /* Match.h */,
 				8FD874EA1C76206500181FA6 /* Info.plist */,
 			);
@@ -194,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FD875001C76207400181FA6 /* Match.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +312,7 @@
 		8FD874FA1C76206600181FA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -318,12 +323,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.silverback-it.Match";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		8FD874FB1C76206600181FA6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
